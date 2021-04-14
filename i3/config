@@ -195,3 +195,9 @@ gaps inner 20
 
 # Polybar launch script
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+# Assign applications to workspaces
+for_window [class="firefox"] move to workspace $ws2
+for_window [class="Thunderbird"] move to workspace $ws3
+for_window [class="discord"] move to workspace $ws9
+for_window [class="Spotify"] move to workspace $ws10
