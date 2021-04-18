@@ -11,7 +11,7 @@
 
 # Description
 I'm using Arch with i3-gaps
-These are the dotfiles I use for my personal Arch configuration. All of these folders are in the `~/.config/` directory. Install the programs are clone the folders.
+These are the dotfiles I use for my personal Arch configuration. All of these folders are in the `~/.config/` directory. Install the programs and clone the folders.
 
 # Programs
 Alacritty
