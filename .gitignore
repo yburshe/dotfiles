@@ -1,0 +1,27 @@
+# Ignore directories
+/Code - OSS/
+/Microsoft/
+QtProject.conf
+/Thunar/
+/dconf/
+/deepin/
+/deluge/
+/discord/
+/dleyna-renderer-service.conf
+/evolution/
+/filezilla/
+/gedit/
+/google-chrome/
+/gtk-3.0/
+/kglobalshortcutsrc
+/kmixctrlrc
+/kmixrc
+/libreoffice/
+/mimeapps.list
+/pavucontrol.ini
+/pulse/
+/spotify/
+/teams/
+/vlc/
+/wallpaper.jpg
+/xfce4/
