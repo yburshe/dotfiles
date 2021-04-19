@@ -18,23 +18,26 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #001B182C
+background = #f8f8ff
 background-alt = #3a335e
 ;foreground = ${xrdb:color7:#222}
-foreground = #dfdfdf
-foreground-alt = #1B182C
+foreground = #000000
+foreground-alt = #000000
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
 
 [bar/example]
 ;monitor = ${env:MONITOR:HDMI-1}
-width = 100%
+width = 65%
 height = 32
-;offset-x = 1%
-;offset-y = 1%
-;radius = 6.0
+offset-x = 17.5%
+offset-y = 0
+radius = 0.0 
+bottom = true
 fixed-center = true
+
+override-redirect = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -46,18 +49,18 @@ border-size = 0
 border-color = #00000000
 
 padding-left = 0
-padding-right = 2
+padding-right = 0
 
 module-margin-left = 0
 module-margin-right = 0
 
-font-0 = "iosevka-regular:pixelsize=10;4"
-font-1 = "Font Awesome 5 Free Solid:style=Solid:size=10;4"
+font-0 = "Font Awesome 5 Free Solid:style=Solid:size=10;4"
+font-1 = mononoki Nerd Font:style=Bold:pixelsize=10;4
 font-2 = "Font Awesome 5 Free Regular:style=Regular:size=10;4"
 
 modules-left = bspwm i3
-modules-center = mpd date temperature
-modules-right = spotify eth root home pulseaudio switchaudio memory cpu powermenu
+modules-center = mpd 
+modules-right = date spotify eth root home pulseaudio switchaudio temperature  memory cpu powermenu 
 
 tray-position = right
 tray-padding = 4
@@ -94,8 +97,7 @@ label-mounted =  %mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
-format-mounted-background = #448899
-format-mounted-padding = 2
+format-mounted-padding = 1
 
 [module/home]
 type = internal/fs
@@ -107,8 +109,7 @@ label-mounted =  %mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
-format-mounted-background = #417d8c
-format-mounted-padding = 2
+format-mounted-padding = 1
 
 [module/i3]
 type = internal/i3
@@ -119,13 +120,14 @@ wrapping-scroll = false
 ; Only show workspaces on the same output as the bar
 ;pin-workspaces = true
 
-label-mode-padding = 2
-label-mode-foreground = #000
-label-mode-background = #53a7bc
+label-mode-padding = 1
+label-mode-foreground = #f8f8ff
+label-mode-background = #000000
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%
-label-focused-background = #53a7bc
+label-focused-foreground = #f8f8ff
+label-focused-background = #000000
 ;label-focused-underline= ${colors.primary}
 label-focused-padding = 2
 
@@ -167,8 +169,7 @@ format-prefix = " "
 format-prefix-foreground = ${colors.foreground}
 ;format-underline = #f90000
 label = %percentage:2%%
-format-background = #0b3742
-format-padding = 3
+format-padding = 1
 
 [module/memory]
 type = internal/memory
@@ -177,8 +178,7 @@ format-prefix = " "
 format-prefix-foreground = ${colors.foreground}
 ;format-underline = #4bffdc
 label = %percentage_used%%
-format-background = #10424f
-format-padding = 3
+format-padding = 1
 
 [module/eth]
 type = internal/network
@@ -186,21 +186,18 @@ interface = enp9s0
 interval = 3.0
 
 ;format-connected-underline = #55aa55
-format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected = %local_ip%
+;format-connected-prefix = " "
+format-connected-prefix-foreground = ${colors.foreground}
+label-connected = " "
 
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
+format-disconnected = <label-disconnected>
+format-disconnected-underline = ${self.format-connected-underline}
+label-disconnected = disconnected
+label-disconnected-foreground = ${colors.foreground-alt}
 
-format-connected-background = #499baf
-format-connected-padding = 2
+format-connected-padding = 1
 
-format-disconnected-background = #499baf
-format-disconnected-padding = 2
+format-disconnected-padding = 1
 
 [module/date]
 type = internal/date
@@ -213,13 +210,12 @@ time = %H:%M:%S
 time-alt = %H:%M:%S
 
 format-prefix =" " 
-format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-foreground = ${colors.foreground}
 ;format-underline = #0a6cf5
 
 label = %date% %time%
 
-format-background = #53a7bc
-format-padding = 2
+format-padding = 1
 
 [module/pulseaudio]
 type = internal/pulseaudio
@@ -252,15 +248,12 @@ ramp-volume-0 =
 ramp-volume-1 = 
 ramp-volume-2 = 
 
-format-volume-background = #357889
-format-volume-padding = 2
+format-volume-padding = 1
 
-format-muted-background = #357889
-format-muted-padding = 2
+format-muted-padding = 1
 
 [module/temperature]
 type = internal/temperature
-thermal-zone = 0
 warn-temperature = 60
 hwmon-path = /sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon1/temp2_input
 
@@ -282,27 +275,16 @@ format-spacing = 1
 
 label-open = 
 label-open-foreground = ${colors.foreground}
-label-close = 
+label-close = 
 label-close-foreground = ${colors.secondary}
 label-separator = |
 label-separator-foreground = ${colors.foreground}
 
 menu-0-0 = reboot
-menu-0-0-exec = menu-open-1
+menu-0-0-exec = systemctl poweroff
 menu-0-1 = power off
-menu-0-1-exec = menu-open-2
+menu-0-1-exec = systemctl reboot
 
-menu-1-0 = cancel
-menu-1-0-exec = menu-open-0
-menu-1-1 = reboot
-menu-1-1-exec = sudo reboot
-
-menu-2-0 = power off
-menu-2-0-exec = sudo poweroff
-menu-2-1 = cancel
-menu-2-1-exec = menu-open-0
-
-format-background = #062a33
 format-padding = 2
 
 [module/switchaudio]
@@ -314,17 +296,16 @@ format-spacing = 1
  
 label-open = 
 label-open-foreground = ${colors.foreground}
-label-close = 
+label-close =
 label-close-foreground = ${colors.secondary}
 label-separator = |
 label-separator-foreground = ${colors.foreground}
 
 menu-0-0 = speakers
-menu-0-0-exec = pacmd set-default-sink 0
+menu-0-0-exec = pacmd set-default-sink alsa_output.pci-0000_0a_00.1.hdmi-stereo-extra1
 menu-0-1 = headphones
-menu-0-1-exec = pacmd set-default-sink 1
+menu-0-1-exec = pacmd set-default-sink alsa_output.pci-0000_0c_00.4.analog-stereo
 
-format-background = #1d5766
 format-padding = 2
 
 [module/spotify]

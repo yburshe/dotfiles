@@ -41,7 +41,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -147,7 +147,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exit
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -184,7 +184,7 @@ bindsym $mod+r mode "resize"
 #}
 
 # Display wallpaper
-exec_always feh --bg-fill /home/yash/Pictures/wallpaper.jpg
+exec_always feh --bg-fill /home/yash/.config/wallpaper.jpg
 
 # Picom
 exec_always picom --experimental-backends --backend glx --xrender-sync-fence
@@ -192,12 +192,12 @@ exec_always picom --experimental-backends --backend glx --xrender-sync-fence
 # gaps
 for_window [class=".*"] border pixel 0
 gaps inner 20
+gaps bottom 30
 
 # Polybar launch script
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Assign applications to workspaces
-for_window [class="firefox"] move to workspace $ws2
 for_window [class="Thunderbird"] move to workspace $ws3
 for_window [class="discord"] move to workspace $ws9
 for_window [class="Spotify"] move to workspace $ws10
