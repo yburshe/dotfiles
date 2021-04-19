@@ -190,14 +190,18 @@ exec_always feh --bg-fill /home/yash/.config/wallpaper.jpg
 exec_always picom --experimental-backends --backend glx --xrender-sync-fence
 
 # gaps
-for_window [class=".*"] border pixel 0
 gaps inner 20
 gaps bottom 30
+
+# border
+for_window [class=".*"] border pixel 1
+
+client.focused              #f8f8ff #f8f8ff #f8f8ff #f8f8ff
 
 # Polybar launch script
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Assign applications to workspaces
-for_window [class="Thunderbird"] move to workspace $ws3
+for_window [class="Thunderbird"] move to workspace $ws8
 for_window [class="discord"] move to workspace $ws9
 for_window [class="Spotify"] move to workspace $ws10
