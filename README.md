@@ -14,11 +14,13 @@ I'm using Arch with i3-gaps
 These are the dotfiles I use for my personal Arch configuration. All of these folders are in the `~/.config/` directory. Install the programs and clone the folders.
 
 # Programs
-Alacritty
-rofi
-polybar
-i3-gaps
-[spotify-status.py](https://github.com/Jvanrhijn/polybar-spotify)
-[spicetify](https://github.com/khanhas/spicetify-cli)
-picom
+* Firefox
+  * [minimal style theme](https://github.com/ongots/firefox-sidebery-minimal-style)
+* Alacritty
+* rofi
+* polybar
+* i3-gaps
+* [spotify-status.py](https://github.com/Jvanrhijn/polybar-spotify)
+* [spicetify](https://github.com/khanhas/spicetify-cli)
+* picom
 
