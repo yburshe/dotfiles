@@ -1,5 +1,5 @@
-![neofetch](https://github.com/sunbect/dotfiles/blob/master/img/neofetch.png)
-![rofi](https://github.com/sunbect/dotfiles/blob/master/img/rofi.png)
+![neofetch](https://github.com/sunbect/dotfiles/blob/master/screens/neofetch_spotify.png)
+![rofi](https://github.com/sunbect/dotfiles/blob/master/screens/rofi.png)
 
 ![banner](https://img.shields.io/archlinux/v/core/x86_64/pacman?style=for-the-badge)
 ![banner](https://img.shields.io/github/stars/Airblader/i3?label=i3-gaps&style=for-the-badge)
