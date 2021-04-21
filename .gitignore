@@ -1,4 +1,8 @@
 # Ignore directories
+OpenRGB/
+flameshot/
+GIMP/
+gtk-2.0/
 Code - OSS/
 Microsoft/
 QtProject.conf
